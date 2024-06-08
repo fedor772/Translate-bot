@@ -5,7 +5,9 @@ from googletrans import Translator
 translator = Translator()
 
 # Создаем экземпляр бота
-bot = telebot.TeleBot("7495754943:AAGecHUMf1uU6k2nyh2Y0CoXzDp6tvXmWf8")
+with open('key.config', 'r') as file:
+    key = file.read().strip()
+bot = telebot.TeleBot(key)
 
 # Обработчик сообщений
 @bot.message_handler(commands=['start', 'help'])
